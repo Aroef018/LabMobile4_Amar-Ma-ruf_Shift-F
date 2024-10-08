@@ -15,10 +15,10 @@ class Login {
 
   factory Login.fromJson(Map<String, dynamic> obj) {
     return Login(
-      code: obj['code'],
+      code: int.tryParse(obj['code'].toString()),
       status: obj['status'],
       token: obj['data']['token'],
-      userID: obj['data']['user']['id'],
+      userID: int.tryParse(obj['data']['user']['id'].toString()),
       userEmail: obj['data']['user']['email'],
     );
   }
